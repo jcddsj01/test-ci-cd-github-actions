@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -13,7 +16,7 @@ jobs:
       - name: Clonar repositório
         uses: actions/checkout@v3
 
-      - name: Copiar arquivos para pasta public
+      - name: Criar pasta public e copiar arquivos
         run: |
           mkdir public
           cp index.html public/
