@@ -6,7 +6,8 @@ on:
       - main
 
 permissions:
-  contents: write
+  contents: write  # Permissão para o conteúdo do repositório
+  pages: write  # Permissão para escrever na branch gh-pages
 
 jobs:
   deploy:
