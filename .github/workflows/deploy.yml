@@ -13,8 +13,14 @@ jobs:
       - name: Clonar repositório
         uses: actions/checkout@v3
 
+      - name: Copiar arquivos para pasta public
+        run: |
+          mkdir public
+          cp index.html public/
+          cp style.css public/
+
       - name: Publicar no GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
+          publish_dir: ./public
